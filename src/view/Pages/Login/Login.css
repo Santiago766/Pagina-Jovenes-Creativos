@@ -1,0 +1,64 @@
+.Content {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height:auto;
+}
+
+.loginContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 300px;
+  border: 1px black solid;
+  align-items: center;
+  place-self: center;
+  padding: 30px;
+}
+
+.Campos {
+  display: flex;
+  width: 185px;
+  padding-top: 30px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  z-index: 1;
+}
+.Campos >i {
+  position: relative;
+  left: 10px;
+  z-index: 1;
+}
+
+.Campos > input{
+  position: relative;
+  left: -11px;
+  padding-left: 15%;
+  border: 0;
+  width: 180px; 
+  border-radius: 5px;
+}
+
+.Entrar {
+  display: flex;
+  flex-direction: column;
+}
+.Entrar > button {
+  margin-block: 20px;
+  width: 185px;
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  background-color: black;
+}
+
+.Registro {
+  display: flex;
+  flex-direction: row ;
+}
+
+.Registro__link {
+  padding-left: 3px;
+  color: darkblue;
+}
