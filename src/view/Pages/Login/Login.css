@@ -2,16 +2,20 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  height:auto;
+  height:100%;
+  background-image: radial-gradient(rgb(0,0,0,0.75),rgb(0,0,0,0.75) ),url(/Img/Todolist.jpg);
+
 }
 
 .loginContent {
+  background-color:white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 50%;
-  height: 300px;
-  border: 1px black solid;
+  width: 40%;
+  height:60%;
+  border: 1px grey solid;
+  border-radius: 20px;
   align-items: center;
   place-self: center;
   padding: 30px;
@@ -20,7 +24,7 @@
 .Campos {
   display: flex;
   width: 185px;
-  padding-top: 30px;
+  padding-top: 40px;
   border-bottom: 1px solid black;
   border-radius: 5px;
   z-index: 1;
@@ -45,7 +49,7 @@
   flex-direction: column;
 }
 .Entrar > button {
-  margin-block: 20px;
+  margin-top: 40px;
   width: 185px;
   border-radius: 5px;
   padding: 3px;
@@ -54,6 +58,7 @@
 }
 
 .Registro {
+  padding-top: 20px;
   display: flex;
   flex-direction: row ;
 }

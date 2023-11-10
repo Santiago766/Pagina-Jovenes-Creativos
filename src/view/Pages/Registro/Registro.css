@@ -1,0 +1,70 @@
+.Content_Registro {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height:100%;
+  background-image: radial-gradient(rgb(0,0,0,0.75),rgb(0,0,0,0.75) ),url(/Img/Todolist.jpg);
+
+}
+
+.RegistroContent {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  height:80%;
+  border: 1px grey solid;
+  border-radius: 20px;
+  align-items: center;
+  place-self: center;
+  padding: 30px;
+}
+
+.Datos {
+  display: flex;
+  width: 185px;
+  padding-top: 40px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  z-index: 1;
+}
+.Datos > i {
+  position: relative;
+  left: 10px;
+  z-index: 1;
+}
+
+.Datos > input{
+  position: relative;
+  left: -11px;
+  padding-left: 15%;
+  border: 0;
+  width: 180px; 
+  border-radius: 5px;
+}
+
+.Registrarse {
+  display: flex;
+  flex-direction: column;
+}
+.Registrarse > button {
+  margin-top: 40px;
+  width: 185px;
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  background-color: black;
+}
+
+.Login {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row ;
+  position: relative;
+}
+
+.Login__link {
+  padding-left: 3px;
+  color: darkblue;
+}
