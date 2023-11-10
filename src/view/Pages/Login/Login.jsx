@@ -9,7 +9,7 @@ export const Login = () => {
         <form action="/Ver-Tareas">
           <div className="Campos">
           <i class="fa-solid fa-user"></i>
-          <input type="text" placeholder="Email" />
+          <input type="email" placeholder="Email" />
         </div>
         <div className="Campos">
           <i class="fa-solid fa-lock"></i>
