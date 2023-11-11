@@ -9,13 +9,13 @@ export const Login = () => {
         <h1>Login</h1>
         <form action="/Ver-Tareas">
           <Input className={"Campos"} Img={<i class="fa-solid fa-user"></i>}
-          type={"email"} placeHolder={"Email"} />
+          type={"email"} placeHolder={"Email"} Name={"email"}/>
           
           <Input className={"Campos"} Img={<i class="fa-solid fa-lock"></i>}
-          type={"password"} placeHolder={"Password"} />
+          type={"password"} placeHolder={"Password"} Name={"password"} />
 
           <div className="Entrar">
-            <button type="submit" to='/Ver-tareas'>Ingresar</button>
+            <button type="submit">Ingresar</button>
             <div className="Registro">
               <p>¿No tienes cuenta?</p>
               <Link className="Registro__link" to="/Registro">Registrate </Link>
