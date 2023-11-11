@@ -1,14 +1,15 @@
-import './Tareas.css'
+import './Tarea.css'
 
-export const Tareas = ({Name}) => {
+export const Tarea = ({Name, Fecha}) => {
   return (
     <div className="tareas">
       <div className='title'>
       <h1>{Name}</h1>
-      <input type="datetime-local" />
       </div>
       <div className='options'>
-        <input type="checkbox" />
+
+        <p>Fecha vencimiento {Fecha}</p>
+        <input type="checkbox" className='checkbox' />
         <i class="fa-solid fa-plus"></i> 
       </div>
     </div>
