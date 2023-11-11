@@ -8,6 +8,7 @@ export const Registro = () => {
       <div className="RegistroContent">
         <h1>Register</h1>
         <form action="/">
+          
           <Input className={"Datos"} Img={<i class="fa-solid fa-user"></i>}
           type={"text"} placeHolder={"First Name"} />
 
@@ -27,7 +28,7 @@ export const Registro = () => {
               <p>¿Ya tienes una cuenta?</p>
               <Link className="Login__link" to="/">Login </Link>
             </div>
-            
+
           </div>
         </form>
       </div>
