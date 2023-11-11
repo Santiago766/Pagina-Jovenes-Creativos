@@ -4,7 +4,8 @@
   align-self: center;
   height:100%;
   background-image: radial-gradient(rgb(0,0,0,0.75),rgb(0,0,0,0.75) ),url(/Img/Todolist.jpg);
-
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .RegistroContent {

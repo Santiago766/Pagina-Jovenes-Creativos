@@ -9,16 +9,16 @@ export const Registro = () => {
         <h1>Register</h1>
         <form action="/">
 
-          <Input className={"Datos"} Img={<i class="fa-solid fa-user"></i>}
+          <Input className={"Datos"} Img={<i className="fa-solid fa-user"></i>}
           type={"text"} placeHolder={"First Name"} Name={"firstName"} />
 
-          <Input className={"Datos"} Img={<i class="fa-solid fa-user"></i>}
+          <Input className={"Datos"} Img={<i className="fa-solid fa-user"></i>}
           type={"text"} placeHolder={"Last Name"} Name={"lastName"} />
 
-          <Input className={"Datos"} Img={<i class="fa-solid fa-envelope"></i>}
+          <Input className={"Datos"} Img={<i className="fa-solid fa-envelope"></i>}
           type={"email"} placeHolder={"Email"} Name={"email"} />
 
-          <Input className={"Datos"} Img={<i class="fa-solid fa-lock"></i>}
+          <Input className={"Datos"} Img={<i className="fa-solid fa-lock"></i>}
           type={"password"} placeHolder={"Password"} Name={"password"} />
 
           <div className="Registrarse">

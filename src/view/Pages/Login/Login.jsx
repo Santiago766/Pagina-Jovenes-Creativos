@@ -8,10 +8,10 @@ export const Login = () => {
       <div className="loginContent">
         <h1>Login</h1>
         <form action="/Ver-Tareas">
-          <Input className={"Campos"} Img={<i class="fa-solid fa-user"></i>}
+          <Input className={"Campos"} Img={<i className="fa-solid fa-user"></i>}
           type={"email"} placeHolder={"Email"} Name={"email"}/>
           
-          <Input className={"Campos"} Img={<i class="fa-solid fa-lock"></i>}
+          <Input className={"Campos"} Img={<i className="fa-solid fa-lock"></i>}
           type={"password"} placeHolder={"Password"} Name={"password"} />
 
           <div className="Entrar">
