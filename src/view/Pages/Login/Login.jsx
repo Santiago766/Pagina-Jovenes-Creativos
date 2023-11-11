@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import './Login.css'
-import { Input } from "../../Components/Input/input"
+import { Input } from "../../Components/Input/Input"
 
 export const Login = () => {
   return (

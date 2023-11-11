@@ -1,4 +1,4 @@
-import { Input } from "../../Components/Input/input"
+import { Input } from "../../Components/Input/Input"
 import './AgregarTarea.css'
 
 export const AgregarTarea = () => {
