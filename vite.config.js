@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://santiago766.github.io/Pagina-Jovenes-Creativos/'
+  base: "https://santiago766.github.io/Pagina-Jovenes-Creativos/"
 })
