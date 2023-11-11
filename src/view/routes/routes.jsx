@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import { Layout } from '../Components/Layout/Layout'
 import { Header } from '../Components/Header/Header'
 import { Login } from '../Pages/Login/Login'
@@ -9,7 +9,7 @@ import { AgregarTarea } from '../Pages/AgregarTarea/AgregarTarea'
 
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     Component: Login
