@@ -18,6 +18,10 @@
   padding: 1%;
 }
 
+.hidden {
+  display: none;
+}
+
 .optionsTodo {
   display: flex;
   justify-content: space-evenly;

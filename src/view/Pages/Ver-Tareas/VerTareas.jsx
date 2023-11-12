@@ -8,15 +8,18 @@ export const VerTareas = () => {
 
   const [hidden, setHidden] = useState(false)
 
-  const cambiar = () => {
-    console.log("pepinos")
+  function cambiar () {
     setHidden(!hidden)
+    console.log("pepino")
   }
 
+  const todo = !hidden
+  ? 'contentTodo' : 'hidden'
+
   return (
-    <div className="content_content">
-      {hidden && <Modal/>}
-      <div className="contentTodo">
+    <div className="content_content" >
+      {hidden && <Modal cambiar={cambiar}/>}
+      <div className={todo}>
         <div className="optionsTodo">
           <section>
             <label >Tareas:</label>
@@ -28,8 +31,12 @@ export const VerTareas = () => {
           <Input placeHolder={"Buscar"} className={"Buscador"} 
           Img={<i className="fa-solid fa-magnifying-glass"></i>} type={"search"}/>
         </div>
-        <Tarea Name={"Bañar Perro"} Fecha={"20/11/2023"} />
-        <Tarea Name={"Proyecto Jovenes Creativos"} Fecha={"14/11/2023"} />
+        <Tarea Name={"Bañar Perro"} Fecha={"20/11/2023"} cambiar={cambiar} />
+        <Tarea Name={"Proyecto Jovenes Creativos"} Fecha={"14/11/2023"} cambiar={cambiar} />
+        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
+        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
+        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
+        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
         <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
       </div>
     </div>
