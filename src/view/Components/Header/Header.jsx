@@ -3,8 +3,8 @@ import './Header.css'
 
 export const Header = () => {
   return (
-    <header>
-      <h1 className='Header_Titulo'>To-Do List</h1>
+    <header className='header'>
+      <h1 className='header_Titulo'>To-Do List</h1>
       <div>
         <ul className='lista'>
           <li><Link to="/agregar-tareas" className='rutas'>Agregar tareas</Link></li>

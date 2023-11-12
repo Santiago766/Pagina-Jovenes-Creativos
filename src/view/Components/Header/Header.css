@@ -1,11 +1,11 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
   background-color: gray;
   align-items: center;
 }
 
-.Header_Titulo{
+.header_Titulo{
   margin: 10px 20px;
   font-size: 35px;
   margin: 0px, 20px;

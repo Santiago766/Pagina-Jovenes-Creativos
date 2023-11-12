@@ -1,6 +1,10 @@
+
 import './Tarea.css'
 
-export const Tarea = ({Name, Fecha}) => {
+export const Tarea = ({Name, Fecha, cambiar}) => {
+
+ 
+
   return (
     <div className="tareas">
       <div className='title'>
@@ -11,7 +15,7 @@ export const Tarea = ({Name, Fecha}) => {
         <div className='checkmark'>
         <input type="checkbox" className='checkbox'/>
         </div>
-        <i className="fa-solid fa-plus"></i> 
+        <i className="fa-solid fa-plus" onClick={cambiar}></i> 
       </div>
     </div>
   )

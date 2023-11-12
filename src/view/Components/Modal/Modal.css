@@ -1,0 +1,41 @@
+.task {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.taskContent {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 80%;
+  margin-top: 5%;
+}
+
+.taskHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-block: 1%;
+}
+
+.taskName{
+  display: flex;
+  justify-content: center;
+  width: 97%;
+}
+
+.taskClose {
+  display: flex;
+  width:3%;
+  height: 100%;
+  align-content: center;
+  font-size: 30px;
+  margin-top: 1%;
+}
+
+.taskDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

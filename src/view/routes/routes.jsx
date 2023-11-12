@@ -4,6 +4,8 @@ import { Login } from '../Pages/Login/Login'
 import { Registro } from '../Pages/Registro/Registro'
 import { VerTareas } from '../Pages/Ver-Tareas/VerTareas'
 import { AgregarTarea } from '../Pages/AgregarTarea/AgregarTarea'
+import { ProtecteRoute } from './ProtecteRoute'
+import { Modal } from '../Components/Modal/Modal'
 
 export const router = createHashRouter([
   {
@@ -21,12 +23,20 @@ export const router = createHashRouter([
     children: [
       {
         path: 'Agregar-Tareas',
-        Component: AgregarTarea
+        element: (
+          <ProtecteRoute><AgregarTarea/></ProtecteRoute>
+        )
       },
       {
-        path: '/ver-tareas',
-        Component: VerTareas
+        path: 'ver-tareas',
+        element: (
+          <ProtecteRoute><VerTareas/></ProtecteRoute>
+        )
       },
+      {
+        path:'Modal',
+        Component: Modal
+      }
     ]
   }
   

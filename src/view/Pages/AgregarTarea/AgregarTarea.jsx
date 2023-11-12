@@ -9,15 +9,22 @@ export const AgregarTarea = () => {
         <form action="/ver-tareas">
           <h1>Agregar Tarea</h1>
 
-          <Input className={"Datos"} placeHolder={"Task Name"} Name={"name"}
+          <Input className={"Datos"} 
+          placeHolder={"Task Name"} 
+          Name={"name"}
           type={"text"} 
           />
 
-          <Input className={"Datos"} placeHolder={"Description"} Name={"description"}
+          <Input className={"Datos"} 
+          placeHolder={"Description"} 
+          Name={"description"}
           type={"text"}
           />
 
-          <Input className={"Datos"} placeHolder={"Finish Date"} Name={"finishDate"}
+          <Input 
+          className={"Datos"} 
+          placeHolder={"Finish Date"} 
+          Name={"finishDate"}
           type={"date"}
           />
 
