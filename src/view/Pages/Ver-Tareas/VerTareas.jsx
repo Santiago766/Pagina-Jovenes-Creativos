@@ -1,24 +1,53 @@
 import { Tarea } from "../../Components/Tarea/Tarea";
-import { useState } from "react";
-import {Modal} from '../../Components/Modal/Modal.jsx'
+import { useState, useEffect } from "react";
+import { Modal } from '../../Components/Modal/Modal.jsx'
 import { Input } from "../../Components/Input/Input";
+import { API_URL } from "../../API/API_URL.js";
 import './VerTareas.css'
+
 
 export const VerTareas = () => {
 
+  const user = JSON.parse(globalThis.localStorage.getItem('user'))
+  const id = user.id
+
+  console.log(id)
+
+  const [task, setTask] = useState()
+
+  useEffect(() => {
+
+    fetch(API_URL + `todo?userId=${id}`, {
+      method: "GET",
+    }).then(response => response.json())
+      .then(response => setTask(response.todos))
+
+  }, [])
+
+  console.log(task)
+
+
+
   const [hidden, setHidden] = useState(false)
 
-  function cambiar () {
+  function cambiar(id) {
     setHidden(!hidden)
-    console.log("pepino")
+    const user = JSON.parse(globalThis.localStorage.getItem('user'))
+    console.log(user.id)
+
+    globalThis.localStorage.setItem('task', JSON.stringify({
+      id: id
+    }))
   }
 
+  
+
   const todo = !hidden
-  ? 'contentTodo' : 'hidden'
+    ? 'contentTodo' : 'hidden'
 
   return (
     <div className="content_content" >
-      {hidden && <Modal cambiar={cambiar}/>}
+      {hidden && <Modal name={task.name} cambiar={cambiar} />}
       <div className={todo}>
         <div className="optionsTodo">
           <section>
@@ -28,16 +57,24 @@ export const VerTareas = () => {
               <option>Incompletas</option>
             </select>
           </section>
-          <Input placeHolder={"Buscar"} className={"Buscador"} 
-          Img={<i className="fa-solid fa-magnifying-glass"></i>} type={"search"}/>
+          <Input placeHolder={"Buscar"} className={"Buscador"}
+            Img={<i className="fa-solid fa-magnifying-glass"></i>} type={"search"} />
         </div>
-        <Tarea Name={"Bañar Perro"} Fecha={"20/11/2023"} cambiar={cambiar} />
-        <Tarea Name={"Proyecto Jovenes Creativos"} Fecha={"14/11/2023"} cambiar={cambiar} />
-        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
-        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
-        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
-        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
-        <Tarea Name={"Recuperar el año"} Fecha={"12/11/2023"} cambiar={cambiar}  />  
+
+        {
+          task && task.map((tasks) => (
+          <Tarea 
+          key={tasks._id} 
+          name={tasks.name}
+          finishDate={tasks.finishDate} 
+          isCompleted={tasks.isCompleted}
+          cambiar={cambiar}
+          id={tasks._id}
+          />
+          ))
+        }
+
+
       </div>
     </div>
   )

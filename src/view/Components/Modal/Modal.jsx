@@ -1,15 +1,19 @@
 import './Modal.css'
 
-export const Modal = ({cambiar}) => {
+export const Modal = ({name, cambiar}) => {
+
+  const selected = JSON.parse(globalThis.localStorage.getItem('task'))
+  console.log(selected)
   return (
     <div className='task'>
       <div className="taskContent">
         <header className='taskHeader'>
           <div className='taskName'>
-            <h1>Titulo tarea</h1>
+            <h1>{name}</h1>
           </div>
           <div className='taskClose'>
-            <i className="fa-regular fa-circle-xmark" onClick={cambiar}></i>
+            <i className="fa-regular fa-circle-xmark" 
+            onClick={cambiar}></i>
           </div>
         </header>
 

@@ -27,6 +27,12 @@ export const Login = () => {
       body: JSON.stringify(body)
     }).then(response => response.json())
     .then(response => {
+
+      globalThis.localStorage.setItem('user', JSON.stringify({
+        nombre: response.user.firstName,
+        id: response.user._id
+      }))
+      
       console.log(response.user.firstName)
       navigate("/ver-tareas")
     })
