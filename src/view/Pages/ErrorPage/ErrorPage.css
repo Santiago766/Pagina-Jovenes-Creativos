@@ -1,0 +1,22 @@
+.ErrorContent {
+  background-color: #000000;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ErrorContent >div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12%;
+}
+
+.ErrorContent >div>h1 {
+  position: relative;
+  left: 15%;
+  font-size: 100px;
+}
+.ErrorContent >div>p {
+  font-size: 20px;
+}

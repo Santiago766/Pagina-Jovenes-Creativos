@@ -1,9 +1,10 @@
-import { OptionCard } from '../OptionCard/OptionCard'
+import { OptionCard } from '../OptionCard'
 import './Modal.css'
 
 export const Modal = ({cambiar}) => {
 
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
+  
   return (
     <div className='task'>
       <div className="taskContent">

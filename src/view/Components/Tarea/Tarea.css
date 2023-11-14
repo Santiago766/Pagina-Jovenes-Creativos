@@ -32,7 +32,6 @@
   border-radius: 50%;
   border: 1px solid black;
   appearance: none;
-  cursor: pointer;
 }
 .checkbox:checked {
   background-color: rgb(0, 68, 128);

@@ -1,5 +1,3 @@
-import './Input.css'
-
 export const Input = ({placeHolder, Img, type, className, Name}) => {
 
  
@@ -15,4 +13,3 @@ export const Input = ({placeHolder, Img, type, className, Name}) => {
     </div>
   )
 }  
-

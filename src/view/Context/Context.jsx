@@ -1,16 +1,13 @@
-import { createContext, useReducer } from 'react';
-import { useState } from 'react';
+import { createContext, useState } from "react";
 
-// Crear un contexto para las tareas
-export const TasksContext = createContext();
 
-// Crear un proveedor para las tareas
-export const TasksProvider = ({ children }) => {
-  const [state, dispatch] = useState
+export const TaskContext = createContext()
 
-  return (
-    <TasksContext.Provider value={{ state, dispatch }}>
+export function TaskProvider ({ children }) {
+  const [id, setId] = useState();
+  return ( 
+    <TaskContext.Provider value={{id, setId}}>
       {children}
-    </TasksContext.Provider>
-  );
-};
+    </TaskContext.Provider>
+  )
+}

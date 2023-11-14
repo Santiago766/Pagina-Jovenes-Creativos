@@ -1,7 +1,7 @@
 import { Tarea } from "../../Components/Tarea/Tarea";
 import { useState, useEffect } from "react";
 import { Modal } from '../../Components/Modal/Modal.jsx'
-import { Input } from "../../Components/Input/Input";
+import { Input } from "../../Components/Input.jsx";
 import { API_URL } from "../../API/API_URL.js";
 import './VerTareas.css'
 
@@ -21,10 +21,6 @@ export const VerTareas = () => {
 
   }, [])
 
-  console.log(task)
-
-
-
   const [hidden, setHidden] = useState(false)
 
   function cambiar() {
@@ -43,6 +39,7 @@ export const VerTareas = () => {
           <section>
             <label >Tareas:</label>
             <select name="Tareas">
+              <option>Todas</option>
               <option>Completas</option>
               <option>Incompletas</option>
             </select>

@@ -1,4 +1,4 @@
-import { Input } from "../../Components/Input/Input"
+import { Input } from "../../Components/Input"
 import './AgregarTarea.css'
 
 export const AgregarTarea = () => {
@@ -6,6 +6,9 @@ export const AgregarTarea = () => {
   const handleClick = () => {
     window.alert("Esta seccion aun esta en proceso")
   }
+
+  
+
 
   return (
     <div className="content">

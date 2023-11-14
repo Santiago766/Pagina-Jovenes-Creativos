@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { Input } from "../../Components/Input/Input"
+import { Input } from "../../Components/Input"
 import { API_URL } from "../../API/API_URL"
 import './Registro.css'
 
@@ -25,9 +25,14 @@ export const Registro = () => {
       body: JSON.stringify(body)
     }).then(response => response.json())
     .then(response => {
-      console.log(response.user.firstName)
+      globalThis.localStorage.setItem('user', JSON.stringify({
+        nombre: response.user.firstName,
+        id: response.user._id
+      }))
       navigate("/ver-tareas")
-    })
+    }).catch(() => {
+      window.alert("algunos de los datos no son correctos o su correo se encuentra ya en uso")
+    }) 
   }
 
   return (

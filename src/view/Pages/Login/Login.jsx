@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Input } from "../../Components/Input/Input";
+import { Input } from "../../Components/Input";
 import { API_URL } from "../../API/API_URL";
 import "./Login.css";
 
@@ -32,10 +32,13 @@ export const Login = () => {
         nombre: response.user.firstName,
         id: response.user._id
       }))
+
       
-      console.log(response.user.firstName)
+
       navigate("/ver-tareas")
-    })
+    }).catch(() => {
+      window.alert("El usuario o contraseña son invalidas")
+    }) 
   }
     
 
