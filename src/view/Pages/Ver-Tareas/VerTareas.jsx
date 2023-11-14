@@ -14,9 +14,8 @@ export const VerTareas = () => {
 
   useEffect(() => {
 
-    fetch(API_URL + `todo?userId=${user.id}`, {
-      method: "GET",
-    }).then(response => response.json())
+    fetch(API_URL + `todo?userId=${user.id}`,
+    ).then(response => response.json())
       .then(response => setTask(response.todos))
 
   }, [])

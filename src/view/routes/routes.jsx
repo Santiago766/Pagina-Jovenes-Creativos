@@ -11,12 +11,12 @@ export const router = createHashRouter([
   {
     path: '/',
     Component: Login,
-    ErrorBoundary: ErrorPage
+    // ErrorBoundary: ErrorPage
   },
   {
     path: '/Registro',
     Component: Registro,
-    ErrorBoundary: ErrorPage
+    // ErrorBoundary: ErrorPage
   },
   
   {
@@ -24,7 +24,7 @@ export const router = createHashRouter([
     Component: Layout,
     children: [
       {
-        path: 'Agregar-Tareas',
+        path: 'agregar-tareas',
         element: (
           <ProtecteRoute><AgregarTarea/></ProtecteRoute>
         )
@@ -36,7 +36,7 @@ export const router = createHashRouter([
         )
       },
       
-    ],ErrorBoundary: ErrorPage
+    ], ErrorBoundary: ErrorPage
     
   } 
 ])
