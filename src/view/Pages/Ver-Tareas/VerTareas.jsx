@@ -9,15 +9,12 @@ import './VerTareas.css'
 export const VerTareas = () => {
 
   const user = JSON.parse(globalThis.localStorage.getItem('user'))
-  const id = user.id
-
-  console.log(id)
 
   const [task, setTask] = useState()
 
   useEffect(() => {
 
-    fetch(API_URL + `todo?userId=${id}`, {
+    fetch(API_URL + `todo?userId=${user.id}`, {
       method: "GET",
     }).then(response => response.json())
       .then(response => setTask(response.todos))
@@ -30,16 +27,9 @@ export const VerTareas = () => {
 
   const [hidden, setHidden] = useState(false)
 
-  function cambiar(id) {
+  function cambiar() {
     setHidden(!hidden)
-    const user = JSON.parse(globalThis.localStorage.getItem('user'))
-    console.log(user.id)
-
-    globalThis.localStorage.setItem('task', JSON.stringify({
-      id: id
-    }))
   }
-
   
 
   const todo = !hidden
@@ -61,6 +51,7 @@ export const VerTareas = () => {
             Img={<i className="fa-solid fa-magnifying-glass"></i>} type={"search"} />
         </div>
 
+
         {
           task && task.map((tasks) => (
           <Tarea 
@@ -68,13 +59,11 @@ export const VerTareas = () => {
           name={tasks.name}
           finishDate={tasks.finishDate} 
           isCompleted={tasks.isCompleted}
+          description={tasks.description}
           cambiar={cambiar}
-          id={tasks._id}
           />
           ))
         }
-
-
       </div>
     </div>
   )

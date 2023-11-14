@@ -3,10 +3,14 @@ import './AgregarTarea.css'
 
 export const AgregarTarea = () => {
 
+  const handleClick = () => {
+    window.alert("Esta seccion aun esta en proceso")
+  }
+
   return (
     <div className="content">
       <div className="contentCrear">
-        <form action="/ver-tareas">
+        <form onSubmit={handleClick}>
           <h1>Agregar Tarea</h1>
 
           <Input className={"Datos"} 

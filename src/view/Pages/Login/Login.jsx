@@ -4,7 +4,7 @@ import { API_URL } from "../../API/API_URL";
 import "./Login.css";
 
 export const Login = () => {
-
+  localStorage.clear()
 
   const navigate = useNavigate();
 

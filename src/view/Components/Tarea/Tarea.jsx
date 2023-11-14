@@ -1,12 +1,18 @@
 import './Tarea.css'
 
-export const Tarea = ({name, finishDate, isCompleted, cambiar, id}) => {
+export const Tarea = ({name, finishDate, isCompleted, description, cambiar}) => {
 
-  // function select (id) {
-  //   globalThis.localStorage.setItem('task', JSON.stringify({
-  //     id: id
-  //   }))
-  // }
+  
+
+  function task () {
+    globalThis.localStorage.setItem('task', JSON.stringify({
+      name: name,
+      description: description,
+      finishDate: Date,
+      isCompleted: isCompleted
+    }))
+    cambiar()
+  }
 
   const Date = finishDate.slice(0,10)
   return (
@@ -21,7 +27,7 @@ export const Tarea = ({name, finishDate, isCompleted, cambiar, id}) => {
         <input type="checkbox" className='checkbox' checked={isCompleted}/>
         </div>
         <i className="fa-solid fa-plus"
-        onClick={cambiar}></i> 
+        onClick={task}></i> 
       </div>
     </div>
     </>
