@@ -18,7 +18,7 @@ export const VerTareas = () => {
     ).then(response => response.json())
       .then(response => setTask(response.todos))
 
-  }, [])
+  }, [task])
 
   const [hidden, setHidden] = useState(false)
 
@@ -56,6 +56,7 @@ export const VerTareas = () => {
           finishDate={tasks.finishDate} 
           isCompleted={tasks.isCompleted}
           description={tasks.description}
+          id={tasks._id}
           cambiar={cambiar}
           />
           ))

@@ -1,6 +1,6 @@
-export const OptionCard = ({ text, className, img }) => {
+export const OptionCard = ({ text, className, img, onClick}) => {
   return (
-  <div className={className}>
+  <div onClick={onClick} className={className}>
     <p>{text}</p>
     {img}
   </div>

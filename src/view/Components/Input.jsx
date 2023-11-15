@@ -1,13 +1,4 @@
-export const Input = ({placeHolder, Img, type, className, Name, onChange}) => {
-
-  // const handleChange = ( {target} ) => {
-  //   setNewTask(state => {
-  //     return {
-  //       ...state,
-  //       [target.name]: target.value
-  //     }
-  //   })
-  // }
+export const Input = ({placeHolder, Img, type, className, Name, onChange }) => {
 
   return (
     <div className={className}>

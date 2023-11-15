@@ -15,10 +15,7 @@ export const AgregarTarea = () => {
       },
       body: JSON.stringify(newTask)
     }).then(response => response.json())
-    .then(response => {
-      console.log(response)
-    })
-
+    window.alert("Se a creado exitasamente la tarea " + newTask.name)
   }
 
   const id = JSON.parse(globalThis.localStorage.getItem('user'))
@@ -46,14 +43,14 @@ export const AgregarTarea = () => {
         <form onSubmit={handleClick}>
           <h1>Agregar Tarea</h1>
 
-          <Input className={"Datos"} 
+          <Input className={"create"} 
           placeHolder={"Task Name"} 
           Name={"name"}
           type={"text"} 
           onChange={handleChange}
           />
 
-          <Input className={"Datos"} 
+          <Input className={"create"} 
           placeHolder={"Description"} 
           Name={"description"}
           type={"text"}
@@ -61,7 +58,7 @@ export const AgregarTarea = () => {
           />
 
           <Input 
-          className={"Datos"} 
+          className={"create"} 
           placeHolder={"Finish Date"} 
           Name={"finishDate"}
           type={"date"}

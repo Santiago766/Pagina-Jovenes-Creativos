@@ -5,8 +5,8 @@ import { TaskProvider } from './view/Context/Context.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-  <TaskProvider>
+  // <TaskProvider>
     <App />
-  </TaskProvider>
+  // </TaskProvider>
 )
 

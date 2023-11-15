@@ -11,12 +11,12 @@ export const router = createHashRouter([
   {
     path: '/',
     Component: Login,
-    // ErrorBoundary: ErrorPage
+    ErrorBoundary: ErrorPage
   },
   {
     path: '/Registro',
     Component: Registro,
-    // ErrorBoundary: ErrorPage
+    ErrorBoundary: ErrorPage
   },
   
   {

@@ -1,6 +1,6 @@
 import './Tarea.css'
 
-export const Tarea = ({name, finishDate, isCompleted, description, cambiar}) => {
+export const Tarea = ({name, finishDate, isCompleted, description, id, cambiar}) => {
 
   
 
@@ -9,7 +9,8 @@ export const Tarea = ({name, finishDate, isCompleted, description, cambiar}) => 
       name: name,
       description: description,
       finishDate: Date,
-      isCompleted: isCompleted
+      isCompleted: isCompleted,
+      id: id
     }))
     cambiar()
   }

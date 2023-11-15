@@ -26,3 +26,20 @@ button {
   color: white;
   background-color: black;
 }
+.create {
+  display: flex;
+  width: 185px;
+  padding-top: 40px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+}
+.create > i {
+  display: none;
+}
+
+.create > input{
+  padding-left: 5%;
+  border: 0;
+  width: 180px; 
+  border-radius: 5px;
+}
