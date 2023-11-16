@@ -57,6 +57,11 @@
   padding: 3px;
   color: white;
   background-color: black;
+  cursor: pointer;
+}
+
+.Entrar > button:hover {
+  background-color: rgb(41, 36, 36);
 }
 
 .Registro {

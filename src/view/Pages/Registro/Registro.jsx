@@ -31,7 +31,7 @@ export const Registro = () => {
       }))
       navigate("/ver-tareas")
     }).catch(() => {
-      window.alert("algunos de los datos no son correctos o su correo se encuentra ya en uso")
+      window.alert("No se lleno alguno de los datos o su correo se encuentra ya en uso")
     }) 
   }
 

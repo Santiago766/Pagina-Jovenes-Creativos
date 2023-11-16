@@ -1,12 +1,23 @@
 import { createContext, useState } from "react";
+import { useReducer } from "react";
+import { userReducer } from "../Reducer/userReducer";
+import { initialState } from "../Reducer/userReducer";
 
 
 export const TaskContext = createContext()
 
-export function TaskProvider ({ children }) {
-  const [id, setId] = useState();
+export const TaskProvider = ({ children }) => {
+
+  const user = globalThis.localStorage.getItem('user')
+
+  const [state, dispatch] = useReducer(userReducer, {
+    ...initialState,
+    user: user ? JSON.parse(user) : null,
+
+  });
+
   return ( 
-    <TaskContext.Provider value={{id, setId}}>
+    <TaskContext.Provider value={{state, dispatch}}>
       {children}
     </TaskContext.Provider>
   )

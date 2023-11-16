@@ -1,29 +1,19 @@
 import { OptionCard } from '../OptionCard'
 import { API_URL } from '../../API/API_URL'
 import './Modal.css'
+import { Eliminar } from '../../API/API_Services'
 
 export const Modal = ({cambiar}) => {
-
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
-  function eliminar () {
+  
+  const id = JSON.stringify(selected.id)
 
-    const id = JSON.stringify(selected.id)
-    console.log(id)
-    console.log(selected.id)
-
-    fetch(API_URL+`todo/${selected.id}`,{
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json'
-      }
-    })
-    .then(response => response.json)
-    .then(console.log("se elimino correctamente la tarea " + selected.name)
-    )
-    cambiar() 
+  const eliminar = (id) => {
+    Eliminar()
+    cambiar()
   }
 
-  console.log(selected.id)
+ 
   
   return (
     <div className='task'>
@@ -55,7 +45,7 @@ export const Modal = ({cambiar}) => {
           img={ <i className="fa-regular fa-circle-check"></i>} 
           />}
 
-          {selected.isCompleted && <OptionCard className={"taskOptions descompletar"} 
+          {selected.isCompleted && <OptionCard className={"taskOptions eliminar"} 
           text={"Descompletar:"} 
           img={ <i className="fa-regular fa-circle-check"></i>} 
           />}

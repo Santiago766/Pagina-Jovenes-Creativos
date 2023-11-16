@@ -7,61 +7,59 @@ import './VerTareas.css'
 
 
 export const VerTareas = () => {
-
   const user = JSON.parse(globalThis.localStorage.getItem('user'))
-
-  const [task, setTask] = useState()
+  const [task, setTask] = useState([])
+  const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-
-    fetch(API_URL + `todo?userId=${user.id}`,
-    ).then(response => response.json())
+    fetch(API_URL + `todo?userId=${user.id}`)
+      .then(response => response.json())
       .then(response => setTask(response.todos))
-
-  }, [task])
-
-  const [hidden, setHidden] = useState(false)
+  }, [])
 
   function cambiar() {
     setHidden(!hidden)
   }
-  
 
-  const todo = !hidden
-    ? 'contentTodo' : 'hidden'
+  const todo = !hidden ? 'contentTodo' : 'hidden';
 
   return (
-    <div className="content_content" >
+    <div className="content_content">
       {hidden && <Modal name={task.name} cambiar={cambiar} />}
       <div className={todo}>
         <div className="optionsTodo">
           <section>
-            <label >Tareas:</label>
+            <label>Tareas:</label>
             <select name="Tareas">
               <option>Todas</option>
               <option>Completas</option>
               <option>Incompletas</option>
             </select>
           </section>
-          <Input placeHolder={"Buscar"} className={"Buscador"}
-            Img={<i className="fa-solid fa-magnifying-glass"></i>} type={"search"} />
+          <Input
+            placeHolder={"Buscar"}
+            className={"Buscador"}
+            Img={<i className="fa-solid fa-magnifying-glass"></i>}
+            type={"search"}
+          />
         </div>
 
-
-        {
-          task && task.map((tasks) => (
-          <Tarea 
-          key={tasks._id} 
-          name={tasks.name}
-          finishDate={tasks.finishDate} 
-          isCompleted={tasks.isCompleted}
-          description={tasks.description}
-          id={tasks._id}
-          cambiar={cambiar}
-          />
+        {task.length > 0 ? (
+          task.map((tasks) => (
+            <Tarea
+              key={tasks._id}
+              name={tasks.name}
+              finishDate={tasks.finishDate}
+              isCompleted={tasks.isCompleted}
+              description={tasks.description}
+              id={tasks._id}
+              cambiar={cambiar}
+            />
           ))
-        }
+        ) : (
+          <h1 className="DontTask">No tiene tareas agregadas</h1>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};

@@ -2,20 +2,13 @@ import { useState } from "react"
 import { Input } from "../../Components/Input"
 import { API_URL } from "../../API/API_URL"
 import './AgregarTarea.css'
+import { CreateTask } from "../../API/API_Services"
 
 export const AgregarTarea = () => {
 
   const handleClick = (event) => {
     event.preventDefault()
-
-    fetch(API_URL + "todo", {
-      method: "POST",
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(newTask)
-    }).then(response => response.json())
-    window.alert("Se a creado exitasamente la tarea " + newTask.name)
+    CreateTask(newTask)
   }
 
   const id = JSON.parse(globalThis.localStorage.getItem('user'))
@@ -28,7 +21,7 @@ export const AgregarTarea = () => {
     userId: id.id
   })
 
-  const handleChange = ( {target} ) => {
+  const handleChange = ({ target }) => {
     setNewTask(state => {
       return {
         ...state,
@@ -43,26 +36,29 @@ export const AgregarTarea = () => {
         <form onSubmit={handleClick}>
           <h1>Agregar Tarea</h1>
 
-          <Input className={"create"} 
-          placeHolder={"Task Name"} 
-          Name={"name"}
-          type={"text"} 
-          onChange={handleChange}
+          <Input className={"create"}
+            placeHolder={"Task Name"}
+            Name={"name"}
+            type={"text"}
+            onChange={handleChange}
+            value=''
           />
 
-          <Input className={"create"} 
-          placeHolder={"Description"} 
-          Name={"description"}
-          type={"text"}
-          onChange={handleChange}
+          <Input className={"create"}
+            placeHolder={"Description"}
+            Name={"description"}
+            type={"text"}
+            onChange={handleChange}
+            value=''
           />
 
-          <Input 
-          className={"create"} 
-          placeHolder={"Finish Date"} 
-          Name={"finishDate"}
-          type={"date"}
-          onChange={handleChange}
+          <Input
+            className={"create"}
+            placeHolder={"Finish Date"}
+            Name={"finishDate"}
+            type={"date"}
+            onChange={handleChange}
+            value=''
           />
 
           <button type="submit">Crear Tarea</button>
