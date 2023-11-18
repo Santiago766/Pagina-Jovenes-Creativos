@@ -1,3 +1,5 @@
 .main {
+  background-image: radial-gradient(rgb(0,0,0,0.75),rgb(0,0,0,0.75) ),url(/Img/fondo.jpg);
+  background-size:contain;
   height: 90%;
 }

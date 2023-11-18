@@ -23,23 +23,24 @@
 
 .Datos {
   display: flex;
-  width: 185px;
+  /* width: 185px; */
+  width: 90%;
   padding-top: 40px;
   border-bottom: 1px solid black;
   border-radius: 5px;
 }
 .Datos > i {
   position: relative;
-  left: 10px;
+  left: 5%;
   z-index: 1;
 }
 
 .Datos > input{
   position: relative;
-  left: -11px;
+  left: -6%;
   padding-left: 15%;
-  border: 0;
-  width: 180px; 
+  border: 0; 
+  width: 100%;
   border-radius: 5px;
 }
 .passsword {
@@ -55,7 +56,7 @@
 }
 .Registrarse > button {
   margin-top: 40px;
-  width: 185px;
+  width: 90%;
   border-radius: 5px;
   padding: 3px;
   color: white;

@@ -26,7 +26,7 @@ export const VerTareas = () => {
 
   return (
     <div className="content_content">
-      <div className="nose">
+      <div className="Modal">
       {hidden && <Modal name={task.name} cambiar={cambiar} />}
         <div className={todo}>
           <div className="optionsTodo">

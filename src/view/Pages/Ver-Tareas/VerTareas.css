@@ -6,14 +6,14 @@
   
 }
 
-.nose {
+.Modal {
   width: 98%;
   height: auto;
-  /* margin-left: 2%; */
   justify-content: center;
 }
 
 .contentTodo {
+  background-color: white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -77,9 +77,10 @@ export const CreateTask = (newTask) => {
 export const Delete = () => {
 
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
+  console.log(selected)
 
 
-  return fetch(API_URL + `todo/${selected.id}`, {
+  return fetch(API_URL + `todo/${selected._id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json'
