@@ -1,4 +1,5 @@
 import { Tarea } from "../../Components/Tarea/Tarea";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Modal } from '../../Components/Modal/Modal.jsx'
 import { Input } from "../../Components/Input.jsx";
@@ -25,40 +26,45 @@ export const VerTareas = () => {
 
   return (
     <div className="content_content">
+      <div className="nose">
       {hidden && <Modal name={task.name} cambiar={cambiar} />}
-      <div className={todo}>
-        <div className="optionsTodo">
-          <section>
-            <label>Tareas:</label>
-            <select name="Tareas">
-              <option>Todas</option>
-              <option>Completas</option>
-              <option>Incompletas</option>
-            </select>
-          </section>
-          <Input
-            placeHolder={"Buscar"}
-            className={"Buscador"}
-            Img={<i className="fa-solid fa-magnifying-glass"></i>}
-            type={"search"}
-          />
-        </div>
-
-        {task.length > 0 ? (
-          task.map((tasks) => (
-            <Tarea
-              key={tasks._id}
-              name={tasks.name}
-              finishDate={tasks.finishDate}
-              isCompleted={tasks.isCompleted}
-              description={tasks.description}
-              id={tasks._id}
-              cambiar={cambiar}
+        <div className={todo}>
+          <div className="optionsTodo">
+            <section>
+              <label>Tareas:</label>
+              <select name="Tareas">
+                <option>Todas</option>
+                <option>Completas</option>
+                <option>Incompletas</option>
+              </select>
+            </section>
+            <Input
+              placeHolder={"Buscar"}
+              className={"Buscador"}
+              Img={<i className="fa-solid fa-magnifying-glass"></i>}
+              type={"search"}
             />
-          ))
-        ) : (
-          <h1 className="DontTask">No tiene tareas agregadas</h1>
-        )}
+          </div>
+
+          {task.length > 0 ? (
+            task.map((tasks) => (
+              <Tarea
+                key={tasks._id}
+                name={tasks.name}
+                finishDate={tasks.finishDate}
+                isCompleted={tasks.isCompleted}
+                description={tasks.description}
+                id={tasks._id}
+                userId={user.id}
+                cambiar={cambiar}
+              />
+            ))
+          ) : (
+            <h1 className="DontTask">No tiene tareas agregadas<br />
+              <Link to="/agregar-tareas" >Click aqui para agregar una</Link>
+            </h1>
+          )}
+        </div>
       </div>
     </div>
   );

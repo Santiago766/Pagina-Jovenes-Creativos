@@ -3,15 +3,16 @@
   justify-content: center;
   align-self: center;
   height:100%;
+  background-image: radial-gradient(rgb(0,0,0,0.75),rgb(0,0,0,0.75) ),url(/Img/fondo.jpg);
+  background-size:contain;
 }
 .contentCrear {
   background-color:white;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 8%;
-  width: 30%;
-  height:60%;
+  width: 40%;
+  height:auto;
   border: 1px grey solid;
   border-radius: 20px;
   align-items: center;
@@ -19,8 +20,8 @@
   padding: 30px;
 }
 button {
-  margin-top: 40px;
-  width: 185px;
+  margin-block: 10%;
+  width: 90%;
   border-radius: 5px;
   padding: 3px;
   color: white;
@@ -28,7 +29,7 @@ button {
 }
 .create {
   display: flex;
-  width: 185px;
+  width: 90%;
   padding-top: 40px;
   border-bottom: 1px solid black;
   border-radius: 5px;
@@ -40,6 +41,6 @@ button {
 .create > input{
   padding-left: 5%;
   border: 0;
-  width: 180px; 
+  width: 100%;
   border-radius: 5px;
 }

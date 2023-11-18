@@ -1,5 +1,3 @@
-
-
 .Content {
   display: flex;
   justify-content: center;
@@ -16,20 +14,22 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 40%;
-  height:60%;
+  height: auto ;
   border: 1px grey solid;
   border-radius: 20px;
   align-items: center;
   place-self: center;
-  padding: 30px;
+  padding: 2%;
 }
 
 .Campos {
   display: flex;
-  width: 185px;
-  padding-top: 40px;
+
+  width: 90%;
+  padding-top: 20%;
   border-bottom: 1px solid black;
   border-radius: 5px;
+  margin-block: 2%;
 }
 .Campos >i {
  position: relative;
@@ -42,7 +42,7 @@
   left: -11px;
   padding-left: 15%;
   border: 0;
-  width: 180px; 
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -51,8 +51,7 @@
   flex-direction: column;
 }
 .Entrar > button {
-  margin-top: 40px;
-  width: 185px;
+  margin-top: 40px;  width: 90%;
   border-radius: 5px;
   padding: 3px;
   color: white;

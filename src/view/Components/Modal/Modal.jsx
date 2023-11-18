@@ -1,23 +1,39 @@
 import { OptionCard } from '../OptionCard'
-import { API_URL } from '../../API/API_URL'
+import { Delete, Update } from '../../API/API_Services'
 import './Modal.css'
-import { Eliminar } from '../../API/API_Services'
+import { FormEdit } from '../FormEdit/FormEdit'
+import { useState } from 'react'
 
 export const Modal = ({cambiar}) => {
-  const selected = JSON.parse(globalThis.localStorage.getItem('task'))
-  
-  const id = JSON.stringify(selected.id)
 
-  const eliminar = (id) => {
-    Eliminar()
+  const selected = JSON.parse(globalThis.localStorage.getItem('task'))
+
+
+  const [Form, setForm] = useState (false)
+
+  const eliminar = () => {
+    Delete()
     cambiar()
   }
+
+  const completar = () => {
+    selected.isCompleted = !selected.isCompleted
+    Update(selected)
+    cambiar()
+  }
+
+  const edit = () => {
+    setForm(!Form)
+  }
+
+  const Modal = !Form ? 'taskContent' : 'hidden'
 
  
   
   return (
     <div className='task'>
-      <div className="taskContent">
+      {Form && <FormEdit edit={edit} cambiar={cambiar} />}
+      <div className={Modal}>
         <header className='taskHeader'>
           <div className='taskName'>
             <h1>{selected.name}</h1>
@@ -35,17 +51,23 @@ export const Modal = ({cambiar}) => {
         </div>
         <footer>  
 
-          <OptionCard className={"taskOptions editar"} 
+          <OptionCard
+          onClick={edit} 
+          className={"taskOptions editar"} 
           text={"Editar:"} 
           img={<i className="fa-regular fa-pen-to-square"></i>} 
           />
 
-          {!selected.isCompleted && <OptionCard className={"taskOptions completar"} 
+          {!selected.isCompleted && <OptionCard 
+          onClick={completar}
+          className={"taskOptions completar"} 
           text={"Completar:"} 
           img={ <i className="fa-regular fa-circle-check"></i>} 
           />}
 
-          {selected.isCompleted && <OptionCard className={"taskOptions eliminar"} 
+          {selected.isCompleted && <OptionCard 
+          onClick={completar}
+          className={"taskOptions eliminar"} 
           text={"Descompletar:"} 
           img={ <i className="fa-regular fa-circle-check"></i>} 
           />}

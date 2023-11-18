@@ -14,7 +14,6 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 40%;
-  height:80%;
   border: 1px grey solid;
   border-radius: 20px;
   align-items: center;
@@ -42,6 +41,12 @@
   border: 0;
   width: 180px; 
   border-radius: 5px;
+}
+.passsword {
+  margin-top: 5%;
+  color: red;
+  position: relative;
+  right: 5%;
 }
 
 .Registrarse {

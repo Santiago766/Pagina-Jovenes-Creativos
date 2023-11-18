@@ -12,6 +12,10 @@
   margin-top: 5%;
 }
 
+.hidden {
+  display: none;
+}
+
 .taskHeader {
   display: flex;
   align-items: center;

@@ -1,16 +1,17 @@
 import './Tarea.css'
 
-export const Tarea = ({name, finishDate, isCompleted, description, id, cambiar}) => {
+export const Tarea = ({name, finishDate, isCompleted, description, id, userId, cambiar}) => {
 
   
 
   function task () {
     globalThis.localStorage.setItem('task', JSON.stringify({
+      _id: id,
       name: name,
       description: description,
       finishDate: Date,
       isCompleted: isCompleted,
-      id: id
+      userId: userId
     }))
     cambiar()
   }

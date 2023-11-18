@@ -1,38 +1,58 @@
 import { Link, useNavigate } from "react-router-dom"
 import { Input } from "../../Components/Input"
-import { API_URL } from "../../API/API_URL"
+import { useState, useContext } from "react"
+import { RegisterUser } from "../../API/API_Services"
+import { TaskContext } from "../../Context/Context"
 import './Registro.css'
 
 export const Registro = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let body = {}
-    for (const element of event.target.elements){
-      if (element.name) {
-        body = { ...body, [element.name]: element.value}
+  const {state, dispatch} = useContext(TaskContext)
+
+  const [mensage, setMensage] = useState(false)
+
+  const [user, setUser] = useState({
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null
+  })
+
+  function onChange({ target }) {
+    setUser(state => {
+      if ([target.name] == "password" && target.value.length >= 8 ) {
+        setMensage(true)
+      }else {
+        setMensage(false)
       }
-    }
+      return {
+        ...state,
+        [target.name]: target.value
+      }
+    })
+  }
 
 
-    fetch(API_URL + "user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body)
-    }).then(response => response.json())
-    .then(response => {
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+
+    try {
+      const datos = await RegisterUser(user)
+      console.log(user)
+      dispatch({
+        type: 'Register', 
+        payload: datos.user
+      })
       globalThis.localStorage.setItem('user', JSON.stringify({
-        nombre: response.user.firstName,
-        id: response.user._id
+        nombre: datos.user.firstName,
+        id: datos.user._id
       }))
-      navigate("/ver-tareas")
-    }).catch(() => {
-      window.alert("No se lleno alguno de los datos o su correo se encuentra ya en uso")
-    }) 
+      navigate('/ver-tareas')
+    } catch (error) {
+      window.alert("Falta rellenar algun campo o el email ya esta en uso")
+    }
   }
 
   return (
@@ -46,7 +66,8 @@ export const Registro = () => {
           Img={<i className="fa-solid fa-user"></i>}
           type={"text"} 
           placeHolder={"First Name"} 
-          Name={"firstName"} 
+          Name={"firstName"}
+          onChange={onChange}
          />
 
           <Input
@@ -55,6 +76,7 @@ export const Registro = () => {
           type={"text"} 
           placeHolder={"Last Name"} 
           Name={"lastName"}
+          onChange={onChange}
           />
 
           <Input 
@@ -63,6 +85,7 @@ export const Registro = () => {
           type={"email"} 
           placeHolder={"Email"} 
           Name={"email"} 
+          onChange={onChange}
           />
 
           <Input 
@@ -70,8 +93,13 @@ export const Registro = () => {
           Img={<i className="fa-solid fa-lock"></i>}
           type={"password"} 
           placeHolder={"Password"} 
-          Name={"password"} 
+          Name={"password"}
+          onChange={onChange}
           />
+
+          {!mensage && 
+          <p className="passsword">La clave debe tener almenos<br/> 8 caracteres</p>
+          }
 
           <div className="Registrarse">
             <button type="submit">Register</button>
