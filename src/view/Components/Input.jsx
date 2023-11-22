@@ -1,8 +1,8 @@
-export const Input = ({placeHolder, Img, type, className, Name, onChange, value }) => {
+export const Input = ({placeHolder, Img, Img2, type, className, Name, onChange, value }) => {
 
   return (
     <div className={className}>
-      {Img}
+      {Img && Img}
       <input 
       type={type}
       placeholder={placeHolder} 
@@ -11,6 +11,7 @@ export const Input = ({placeHolder, Img, type, className, Name, onChange, value 
       value={value}
       required
       />
+      {Img2 && Img2}
     </div>
   )
 }  

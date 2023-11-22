@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .taskContent {
@@ -75,6 +76,7 @@ footer {
   border-radius: 5%;
   cursor: pointer;
 }
+
 .taskOptions:hover {
   box-shadow: 10px 0px 10px 0px;
 }
@@ -92,4 +94,45 @@ footer {
 .editar:hover {
   background-color: #a7d218;
   border: #a7d218;
+}
+
+@media screen and (max-width:600px) {
+
+  .taskOptions {
+    border-radius: 20%;
+  }
+  .taskOptions > p {
+    display: none;
+  }
+
+  .taskName {
+    font-size: 10px;
+  }
+
+  .taskClose {
+    right: 3%;
+  }
+
+  .taskContent {
+    width: 90%;
+  }
+
+  .taskOptions:focus {
+    box-shadow: 10px 0px 10px 0px;
+  }
+  
+  .completar {
+    background-color: #38ca38;
+    border: #38ca38;
+  }
+  
+  .eliminar {
+    background-color: #c71212;
+    border: #c71212;
+  }
+  
+  .editar {
+    background-color: #a7d218;
+    border: #a7d218;
+  }
 }

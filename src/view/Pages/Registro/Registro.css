@@ -23,7 +23,6 @@
 
 .Datos {
   display: flex;
-  /* width: 185px; */
   width: 90%;
   padding-top: 40px;
   border-bottom: 1px solid black;
@@ -73,4 +72,10 @@
 .Login__link {
   padding-left: 3px;
   color: darkblue;
+}
+
+@media screen and (max-width:700px) {
+  .RegistroContent {
+    width: 80%;
+  }
 }

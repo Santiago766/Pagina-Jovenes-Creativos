@@ -25,3 +25,8 @@
   font-size: 20px;
 }
 
+@media screen and (max-width:700px) {
+  .header_Titulo{
+    font-size: 25px;
+  }
+}

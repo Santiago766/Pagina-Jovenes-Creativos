@@ -8,6 +8,11 @@ export const AgregarTarea = () => {
   const handleClick = (event) => {
     event.preventDefault()
     CreateTask(newTask)
+    setNewTask({
+    name: '',
+    description: '',
+    finishDate: ''
+  })
   }
 
   const id = JSON.parse(globalThis.localStorage.getItem('user'))
@@ -50,6 +55,7 @@ export const AgregarTarea = () => {
             Name={"description"}
             type={"text"}
             onChange={handleChange}
+            value={newTask.description}
           />
 
           <Input
@@ -58,6 +64,7 @@ export const AgregarTarea = () => {
             Name={"finishDate"}
             type={"date"}
             onChange={handleChange}
+            value={newTask.finishDate}
           />
 
           <button type="submit">Crear Tarea</button>

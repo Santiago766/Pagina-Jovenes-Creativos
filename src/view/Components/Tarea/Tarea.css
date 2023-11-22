@@ -3,7 +3,7 @@
   width: 80%;
   display: flex;
   justify-content: space-between;
-  margin: 1% 10%; 
+  margin: 1%; 
   border: 1px black solid;
   border-radius: 10px;
   padding: 0.5%;
@@ -43,4 +43,24 @@
   margin-right: 5%;
   font-size: 30px;
   cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+  .tareas {
+    width: 98%;
+  }
+  
+  .title {
+    font-size: 10px;
+  }
+
+  .checkbox{
+    align-self: center;
+    width:15px;
+    height: 15px;
+  }
+
+  .options > i{
+    font-size: 20px;
+  }
 }

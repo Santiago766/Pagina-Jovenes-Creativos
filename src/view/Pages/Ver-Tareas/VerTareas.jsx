@@ -1,22 +1,31 @@
 import { Tarea } from "../../Components/Tarea/Tarea";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Modal } from '../../Components/Modal/Modal.jsx'
 import { Input } from "../../Components/Input.jsx";
 import { API_URL } from "../../API/API_URL.js";
+import { TaskContext } from "../../Context/Context.jsx";
 import './VerTareas.css'
 
 
 export const VerTareas = () => {
   const user = JSON.parse(globalThis.localStorage.getItem('user'))
   const [task, setTask] = useState([])
+  const { state, dispatch } = useContext(TaskContext)
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    fetch(API_URL + `todo?userId=${user.id}`)
+    fetch(API_URL + `todo?userId=${user.id}&searhTerm=se`)
       .then(response => response.json())
-      .then(response => setTask(response.todos))
-  }, [])
+      .then(response => 
+        setTask(response.todos)
+        // dispatch({
+        //   type:'GetUser',
+        //   payload: response.todos
+        // })
+        )
+  }, [state])
+
 
   function cambiar() {
     setHidden(!hidden)
@@ -30,20 +39,12 @@ export const VerTareas = () => {
       {hidden && <Modal name={task.name} cambiar={cambiar} />}
         <div className={todo}>
           <div className="optionsTodo">
-            <section>
-              <label>Tareas:</label>
-              <select name="Tareas">
-                <option>Todas</option>
-                <option>Completas</option>
-                <option>Incompletas</option>
-              </select>
-            </section>
-            <Input
-              placeHolder={"Buscar"}
-              className={"Buscador"}
-              Img={<i className="fa-solid fa-magnifying-glass"></i>}
-              type={"search"}
-            />
+              <Input
+                placeHolder={"Buscar"}
+                className={"Buscador"}
+                Img2={<i className="fa-solid fa-magnifying-glass"></i>}
+                type={"search"}
+                />
           </div>
 
           {task.length > 0 ? (

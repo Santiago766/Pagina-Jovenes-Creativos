@@ -1,5 +1,6 @@
 export const initialState = {
-  user: null
+  user: null,
+  tareas: []
 };
 
 export const userReducer = (state, action) => {
@@ -13,6 +14,11 @@ export const userReducer = (state, action) => {
       return {
         ...state,
         user:action.payload
+      }
+    case 'GetTask':
+      return {
+        ...state,
+        tareas:action.payload
       }
     default:
       return state;

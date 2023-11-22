@@ -32,41 +32,42 @@
 
 .optionsTodo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
-  width: 90%;
+  width: 100%;
 }
 
 .Buscador{
   display: flex;
   border: 1px black solid;
+  border-right: 0px;
   border-radius: 20px;
-  width:19%;
+  width:40%;
   align-items: center;
   position: relative;
-  right: 20%;
 }
+
+
 .Buscador > i {
   position: relative;
-  left: 88%;
-  border-left: 1px solid black;
   padding: 2px;
+  right: 0.5%;
+  cursor: pointer;
 }
 
 .Buscador > input {
   position: relative;
   background-color: transparent;
-  left: -8%;
   padding-left: 0;
   border: 0;
-  width: 88%; 
+  width: 100%; 
   border-radius: 5px;
 }
 
 .Buscador > input::placeholder{
   color: black;
   padding-left: 40%;
-}
+} 
 
 .DontTask {
   margin: 5%;

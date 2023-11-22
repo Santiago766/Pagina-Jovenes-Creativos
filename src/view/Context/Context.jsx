@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import { useReducer } from "react";
 import { userReducer } from "../Reducer/userReducer";
 import { initialState } from "../Reducer/userReducer";
@@ -13,7 +13,6 @@ export const TaskProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, {
     ...initialState,
     user: user ? JSON.parse(user) : null,
-
   });
 
   return ( 

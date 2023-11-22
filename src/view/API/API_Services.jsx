@@ -1,5 +1,6 @@
 import { API_URL } from "./API_URL"
 
+//fetch para el logueo de usuario
 export const Loginfetch = (user) => {
 
   return fetch(API_URL + 'user/auth', {
@@ -24,6 +25,7 @@ export const Loginfetch = (user) => {
     });
 }
 
+//fetch para el registro de usuario
 export const RegisterUser = (user) => {
 
   return fetch(API_URL + "user", {
@@ -47,6 +49,8 @@ export const RegisterUser = (user) => {
       return { error: error.message };
     })
 }
+
+//fetch para crear una nueva tarea
 
 export const CreateTask = (newTask) => {
   fetch(API_URL + "todo", {
@@ -72,7 +76,7 @@ export const CreateTask = (newTask) => {
     });
 }
 
-
+//fetch para el Eliminar alguna tarea
 
 export const Delete = () => {
 
@@ -90,6 +94,8 @@ export const Delete = () => {
     .then(window.alert("se elimino correctamente la tarea " + selected.name)
     )
 }
+
+//fetch para el Actualizar alguna tarea
 
 export const Update = (selected) => {
 
