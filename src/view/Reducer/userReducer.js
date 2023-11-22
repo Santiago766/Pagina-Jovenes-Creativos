@@ -15,7 +15,7 @@ export const userReducer = (state, action) => {
         ...state,
         user:action.payload
       }
-    case 'GetTask':
+    case 'Update':
       return {
         ...state,
         tareas:action.payload

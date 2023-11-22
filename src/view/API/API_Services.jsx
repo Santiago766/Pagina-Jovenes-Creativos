@@ -90,9 +90,13 @@ export const Delete = () => {
       'Content-type': 'application/json'
     }
   })
-    .then(response => response.json())
-    .then(window.alert("se elimino correctamente la tarea " + selected.name)
-    )
+    // .then(response => response.json())
+    .then((response) => {
+      if (response.ok) {
+        console.log(state)
+        window.alert("se elimino correctamente la tarea " + selected.name)
+      }
+    })
 }
 
 //fetch para el Actualizar alguna tarea

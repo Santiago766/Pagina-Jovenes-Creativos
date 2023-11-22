@@ -38,7 +38,6 @@
 .taskClose {
   display: flex;
   width: 5%;
-  align-content: center;
   font-size: 30px;
   margin-top: -1%;
   position: relative;
@@ -96,7 +95,15 @@ footer {
   border: #a7d218;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
+
+  .taskName {
+    width: 90%;
+  }
+
+  .taskClose {
+    width: 10%;
+  }
 
   .taskOptions {
     border-radius: 20%;
@@ -107,10 +114,6 @@ footer {
 
   .taskName {
     font-size: 10px;
-  }
-
-  .taskClose {
-    right: 3%;
   }
 
   .taskContent {

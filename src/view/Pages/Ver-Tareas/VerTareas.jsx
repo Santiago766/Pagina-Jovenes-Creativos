@@ -11,7 +11,7 @@ import './VerTareas.css'
 export const VerTareas = () => {
   const user = JSON.parse(globalThis.localStorage.getItem('user'))
   const [task, setTask] = useState([])
-  const { state, dispatch } = useContext(TaskContext)
+  const { state } = useContext(TaskContext)
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {

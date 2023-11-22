@@ -1,24 +1,35 @@
 import { OptionCard } from '../OptionCard'
 import { Delete, Update } from '../../API/API_Services'
-import './Modal.css'
 import { FormEdit } from '../FormEdit/FormEdit'
 import { useState } from 'react'
+import { useContext } from "react";
+import { TaskContext } from "../../Context/Context.jsx";
+import './Modal.css'
 
 export const Modal = ({cambiar}) => {
 
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
+  const {state, dispatch } = useContext(TaskContext)
 
 
   const [Form, setForm] = useState (false)
 
-  const eliminar = () => {
-    Delete()
+  const eliminar = async() => {
+    await Delete()
+    dispatch({
+      type:'Update',
+      payload: selected
+    })
     cambiar()
   }
 
-  const completar = () => {
+  const completar = async() => {
     selected.isCompleted = !selected.isCompleted
-    Update(selected)
+    await Update(selected)
+    dispatch({
+      type:'Update',
+      payload: selected
+    })
     cambiar()
   }
 
