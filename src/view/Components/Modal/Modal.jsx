@@ -9,8 +9,7 @@ import './Modal.css'
 export const Modal = ({cambiar}) => {
 
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
-  const {state, dispatch } = useContext(TaskContext)
-
+  const { dispatch } = useContext(TaskContext)
 
   const [Form, setForm] = useState (false)
 

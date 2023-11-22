@@ -81,20 +81,15 @@ export const CreateTask = (newTask) => {
 export const Delete = () => {
 
   const selected = JSON.parse(globalThis.localStorage.getItem('task'))
-  console.log(selected)
-
 
   return fetch(API_URL + `todo/${selected._id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json'
     }
-  })
-    // .then(response => response.json())
-    .then((response) => {
+  }).then((response) => {
       if (response.ok) {
-        console.log(state)
-        window.alert("se elimino correctamente la tarea " + selected.name)
+       window.alert("se elimino correctamente la tarea " + selected.name)
       }
     })
 }
@@ -112,6 +107,7 @@ export const Update = (selected) => {
   })
     .then((response) => {
       if (response.ok) {
+        window.alert("Se actualizo correctamente la tarea")
         return response.json
       } else {
           return response.json().then((errorData) => {

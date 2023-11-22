@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Input } from "../Input"
-import './FormEdit.css'
 import { Update } from "../../API/API_Services"
+import './FormEdit.css'
 
 
 export const FormEdit = ({ edit }) => {
@@ -26,8 +26,10 @@ export const FormEdit = ({ edit }) => {
     userId: selected.userId
   })
 
-  const handleSubmit = () => {
-    Update(update)
+  const handleSubmit = async(event) => {
+    event.preventDefault()
+    await Update(update)
+    location.reload()
   }
   return (
     <div className="formEdit">

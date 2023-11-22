@@ -12,19 +12,27 @@ export const VerTareas = () => {
   const user = JSON.parse(globalThis.localStorage.getItem('user'))
   const [task, setTask] = useState([])
   const { state } = useContext(TaskContext)
+  const [searchTerm, setSearchTerm] = useState('')
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    fetch(API_URL + `todo?userId=${user.id}&searhTerm=se`)
+    fetch(API_URL + `todo?userId=${user.id}`)
       .then(response => response.json())
       .then(response => 
         setTask(response.todos)
-        // dispatch({
-        //   type:'GetUser',
-        //   payload: response.todos
-        // })
-        )
+      )
   }, [state])
+
+  const search = ({target}) => {
+    setSearchTerm(target.value)
+    console.log(searchTerm.toLowerCase())
+  }
+
+  const filter = task.filter((task) => {
+      const title = task.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return title
+  })
+  console.log(filter)
 
 
   function cambiar() {
@@ -42,20 +50,17 @@ export const VerTareas = () => {
               <Input
                 placeHolder={"Buscar"}
                 className={"Buscador"}
+                onChange={search}
                 Img2={<i className="fa-solid fa-magnifying-glass"></i>}
                 type={"search"}
                 />
           </div>
 
-          {task.length > 0 ? (
-            task.map((tasks) => (
+          {filter.length > 0 ? (
+            filter.map((tasks) => (
               <Tarea
                 key={tasks._id}
-                name={tasks.name}
-                finishDate={tasks.finishDate}
-                isCompleted={tasks.isCompleted}
-                description={tasks.description}
-                id={tasks._id}
+                task={tasks}
                 userId={user.id}
                 cambiar={cambiar}
               />

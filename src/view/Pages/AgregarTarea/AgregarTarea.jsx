@@ -5,14 +5,16 @@ import { CreateTask } from "../../API/API_Services"
 
 export const AgregarTarea = () => {
 
-  const handleClick = (event) => {
+  const handleClick = async(event) => {
     event.preventDefault()
     CreateTask(newTask)
     setNewTask({
-    name: '',
-    description: '',
-    finishDate: ''
-  })
+      name: '',
+      description: '',
+      finishDate: '',
+      isCompleted: false,
+      userId: id.id
+    })
   }
 
   const id = JSON.parse(globalThis.localStorage.getItem('user'))
